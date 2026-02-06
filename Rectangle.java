@@ -28,6 +28,18 @@ public class Rectangle {
     this(1, 1, 0, 0);
   }
 
+  // method: scale the rectangle
+  public void scale(double scaleX, double scaleY) {
+    width *= scaleX;
+    height *= scaleY;
+  }
+
+  // method: scale the rectangle
+  public void scale(double scale) {
+    width *= scale;
+    height *= scale;
+  }
+
   // method: move the rectangle
   public void move(double dx, double dy) {
 	   originX += dx;
@@ -43,5 +55,27 @@ public class Rectangle {
   public double getPerimeter() {
     return 2 * (width + height);
   }
+
+  public static boolean areOverlapping(Rectangle r1, Rectangle r2) {
+    return r1.isOverlappedWith(r2);
+  }
+
+  public boolean isOverlappedWith(Rectangle r){
+    if ((r.originX > this.originX + this.width) || (r.originY > this.originY + this.height) || (this.originX > r.originX + r.width) || (this.originY > r.originY + r.height)) {
+      return false;
+    }
+    return true;
+  }
   
+  public double calcRatio() {
+    return (width / height)
+  }
+
+  public boolean isSquare() {
+    double ratio = this.calcRatio
+    if ((ratio < 0.999) || (ratio > 1.001)) {
+      return false;
+    }
+    return true;
+  }
 }
