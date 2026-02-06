@@ -2,8 +2,8 @@
 public class Rectangle {
   
   // 4 instance attributes
-  public double width;
-  public double height;
+  private double width;
+  private double height;
   public double originX = 0.0;
   public double originY = 0.0;
 
@@ -26,6 +26,26 @@ public class Rectangle {
   // third constructor: 
   public Rectangle() {
     this(1, 1, 0, 0);
+  }
+
+  public double getWidth() {
+    return width;
+  }
+
+  public void setWidth(double width){
+    if (width >= 0) {
+      this.width = width;
+    }
+  }
+
+  public double getHeight() {
+    return height;
+  }
+
+  public void setHeight(double height){
+    if (height >= 0) {
+      this.height = height;
+    }
   }
 
   // method: scale the rectangle
@@ -68,11 +88,11 @@ public class Rectangle {
   }
   
   public double calcRatio() {
-    return (width / height)
+    return (width / height);
   }
 
   public boolean isSquare() {
-    double ratio = this.calcRatio
+    double ratio = this.calcRatio();
     if ((ratio < 0.999) || (ratio > 1.001)) {
       return false;
     }
