@@ -28,6 +28,12 @@ public class Rectangle {
     this(1, 1, 0, 0);
   }
 
+  // Return a description of a rectangle in the form of
+  // Rectangle[x=*,y=*,w=*,h=*]
+  public String toString(){
+    return "Rectangle[x="+originX+",y="+originY+",w="+width+",h="+height+"]";
+  }
+
   public double getWidth() {
     return width;
   }
